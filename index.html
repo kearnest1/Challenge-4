@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed JaveScript Quiz</title>
+    <link rel="stylesheet" href="./style/style.css" />
 </head>
 <body>
-    
+<header>
+    <div id = "timer"></div>
+</header>
+
+<div class="Welcome" id="Welcome">
+<h1>Timed JavaScript Quiz</h1>
+<p>Attempt to answer all questions, within the given time.</p>
+<button id="start-quiz">Start Quiz</button></div>
+
+<div class="container">
+        <div id="question-container" class="hide"></div>
+    <div class="hide" id="Questions">
+        <h1>Question</h1>
+        <div id="button" class="grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+
+       <div class="selector">
+           <button id="next-button" class="next-button>">Next</button>
+        </div>
+       </div>
+    </div>
+</div>
+</div>
+
+<div id="footer">
+    <footer>
+        <p id="questions-remaining">Question x of y</p>
+    </footer>
+</div>
+ <script src="./java/script.js"></script>
 </body>
 </html>
