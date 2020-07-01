@@ -1,16 +1,24 @@
 //First page
 
-var welcome = document.querySelector("Welcome")
-var startButton = document.querySelector("start-quiz")
-var questioncontainerEl = document.querySelector("Questions")
-
+var welcome = document.querySelector("#welcome-id")
+var startButton = document.querySelector("#start-quiz")
+var questioncontainerEl = document.querySelector("#question-container")
+var currentQuestionIndex = 0;
+var timerEl = document.querySelector("#timer")
+var questiontextEl = document.querySelector("#question-text")
+var nextbuttonEl = document.querySelector("#next-button")
 
 //start button
-startButton.addEventListener("click".startQuiz);
+startButton.addEventListener("click",startQuiz);
 
+//next button
+nextbuttonEl.addEventListener("click",nextbutton);
 
+var seconds= 60;
+timerEl.innerHTML = seconds
+
+setInterval(timerfunction, 1000);
 // timer
-var seconds=60;
 var timer;
 function timerfunction() {
     if (seconds <60){ 
@@ -80,15 +88,53 @@ var questions = [
    },
 ]
 
-var startQuiz = function (){
+function startQuiz (){
     startButton.classList.add("hide");
     questioncontainerEl.classList.remove("hide");
 renderQuestion();
 }
 
-var renderQuestion = function (){
 
+
+
+var q = questions[currentQuestionIndex];
+ var renderQuestion = function (){
+     questiontextEl.innerHTML = "<h1 id='question-text'>" + q.question + "</h1>";
+ }
+
+ var aAnswerEl = document.createElement ("button");
+ aAnswerEl.className = "btn";
+ aAnswerEl.style = "margin: 20px"
+ aAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.a+"</h3>";
+ questioncontainerEl.appendChild(aAnswerEl);
+
+ var bAnswerEl = document.createElement ("button");
+ bAnswerEl.className = "btn";
+ bAnswerEl.style = "margin: 20px"
+ bAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.b+"</h3>";
+ questioncontainerEl.appendChild(bAnswerEl);
+
+ var cAnswerEl = document.createElement ("button");
+ cAnswerEl.className = "btn";
+ cAnswerEl.style = "margin: 20px"
+ cAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.c+"</h3>";
+ questioncontainerEl.appendChild(cAnswerEl);
+
+ var dAnswerEl = document.createElement ("button");
+ dAnswerEl.className = "btn";
+ dAnswerEl.style = "margin: 20px"
+ dAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.d+"</h3>";
+ questioncontainerEl.appendChild(dAnswerEl);
+
+
+
+ function nextbutton (){
+    currentQuestionIndex++
+    q = questions[currentQuestionIndex]
+    questiontextEl.innerHTML = "<h1 id='question-text'>" + q.question + "</h1>";
+    aAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.a+"</h3>";  
+    bAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.b+"</h3>";
+    cAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.c+"</h3>";
+    dAnswerEl.innerHTML = "<h3 id= answers>" + q.answers.d+"</h3>";
 }
-
-
 

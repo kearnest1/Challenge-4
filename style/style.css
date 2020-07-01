@@ -37,8 +37,8 @@ body {
   }
 }
 .container {
-    height: 300px;
-    width: 400px;
+    height: 50px;
+    width: 100px;
     background-color: white;
     padding: 10px 45px 45px 45px;
     margin: auto;
@@ -49,9 +49,10 @@ body {
 .container h1 {
     color: white;
     text-align: center;
-    padding: 3px 0px;
+    padding: 0px 0px;
+    width: 400px;
     font-size: 40px;
-    border-radius: 40px;
+    border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rebeccapurple;
 }
@@ -77,14 +78,9 @@ body {
 }
 
 .selector {
-    display: flex;
-    justify-content: left;
+    display: inline-flex;
+    justify-content: center;
+
 }
 
-.questions-remaining {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    color: black;
-}
+
