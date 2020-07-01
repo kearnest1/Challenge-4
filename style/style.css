@@ -67,16 +67,6 @@ body {
   margin: 10px
 }
 
-.btn.correct {
-    background-color: violet;
-    color: black;
-}
-
-.btn.wrong {
-    background-color: red;
-    color: black;
-}
-
 .selector {
     display: inline-flex;
     justify-content: center;
